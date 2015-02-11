@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+  <title>angular-spotify demo!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+  <h1>Music Playlist Creator</h1>
+    <p>This app uses the <a href="https://developer.yahoo.com/weather/">Yahoo! Weather API</a> and <a href="https://developer.spotify.com/web-api/">Spotify API</a>.  When you enter your zipcode, and click the button, a GET request is sent to the Yahoo! Weather API to get the weather for that zipcode.  The app will then use description as keywords to send another GET request to the Spotify API to return results of songs titles that match that keyword.  This app was built using the <a href="https://angularjs.org/">Angular JS</a> javascript framework and <a href="http://getbootstrap.com/">Bootstrap</a> responsive framework.</p>
+  </div>
+  <div ng-controller="MainController">
+    <br />
+    <input class="form-control" type="text" ng-model="zip" placeholder="Enter your zipcode to compose your playlist">
+    <br />
+    <button class="btn-primary btn-lg" ng-click="check(zip)">Find Songs!</button>
+    <br /><br />
+    <ul class="media-list">
+      <li class="media" ng-repeat="artist in artists">
+        <div class="media-left">
+          <img class="media-object" ng-src="{{artist.album.images[2].url}}" alt="">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{artist.artists[0].name}} - {{artist.name}}</h4>
+          <div class="btn btn-default"><a class="media" ng-href="{{artist.external_urls.spotify}}" target="_blank">Play</a></div>
+        </div>
+      </li> 
+    </ul>
+  </div>  
+</div>
+  
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../src/angular-spotify.js"></script>
+  <script src="main.controller.js"></script>
+</body>
+</html>
