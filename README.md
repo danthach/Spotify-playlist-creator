@@ -1,1 +1,3 @@
 This app uses the <a href="https://developer.yahoo.com/weather/">Yahoo! Weather API</a> and <a href="https://developer.spotify.com/web-api/">Spotify API</a>.  When you enter your zipcode, and click the button, a GET request is sent to the Yahoo! Weather API to get the weather for that zipcode.  The app will then use description as keywords to send another GET request to the Spotify API to return results of songs titles that match that keyword.  This app was built using the <a href="https://angularjs.org/">Angular JS</a> javascript framework and <a href="http://getbootstrap.com/">Bootstrap</a> responsive framework.
+
+Demo: <a href="http://www.disalteration.com/angular-spotify-weather/app/">http://www.disalteration.com/angular-spotify-weather/app/</a>
